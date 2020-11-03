@@ -1,4 +1,4 @@
-import { ADD_FEATURE } from '../actions'
+import { ADD_FEATURE, REMOVE_FEATURE } from '../actions'
 
 //Setup initial state and reducer
 
@@ -23,6 +23,8 @@ export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_FEATURE:
             return {...state, car: {...state.car, features: [...state.car.features, action.payload]}}
+        case REMOVE_FEATURE:
+            return {...state, car: {...state.car, features: action.payload }}
         default:
             return state;
     }
