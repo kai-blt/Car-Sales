@@ -8,12 +8,12 @@ export const addFeature = (id, name, price) => {
     }
 }
 
-export const removeFeature = (id, addedFeaturesArray) => {
+export const removeFeature = (id, price, addedFeaturesArray) => {
     const updatedFeaturesArray = addedFeaturesArray.filter(item => item.id !== id);
     console.log(updatedFeaturesArray)
 
     return {
         type: REMOVE_FEATURE,
-        payload: updatedFeaturesArray
+        payload: {price: price, updatedFeaturesArray: updatedFeaturesArray}
     }
 }
